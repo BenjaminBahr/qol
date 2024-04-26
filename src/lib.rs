@@ -4,9 +4,9 @@ pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
-mod test_select_entries_from_vector;
 #[cfg(test)]
-mod tests;
+mod test_select_entry_from_vector;
+mod test_select_entries_from_vector;
 
 pub fn read_lines(filename: &str) -> Vec<String> {
     read_to_string(filename)

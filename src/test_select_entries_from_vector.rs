@@ -56,3 +56,16 @@ pub fn test_entry_selection_03() {
         panic!("{}", "Test returned None");
     }
 }
+
+#[test]
+pub fn test_entry_selection_04() {
+    // Given
+    let vec: Vec<i32> = vec![1, 2, 3, 4];
+    let entries: Vec<usize> = vec![0, 1, 2, 3, 0];
+
+    // When
+    let result = select_entries_from_vector(vec, entries);
+
+    // Then
+    assert!(result == None);
+}

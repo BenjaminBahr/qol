@@ -7,6 +7,7 @@ pub fn add(left: usize, right: usize) -> usize {
 #[cfg(test)]
 mod test_select_entry_from_vector;
 mod test_select_entries_from_vector;
+mod choices;
 
 pub fn read_lines(filename: &str) -> Vec<String> {
     read_to_string(filename)
@@ -70,3 +71,4 @@ pub fn select_entries_from_vector<T: Copy + Clone>(
     }
     Some((v1, v2))
 }
+

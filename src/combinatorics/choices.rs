@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 use itertools::Itertools;
 
 pub fn choices_from_range(range: usize, amount: usize) -> Vec<Vec<usize>> {
@@ -10,9 +11,16 @@ pub fn choices_from_range(range: usize, amount: usize) -> Vec<Vec<usize>> {
         let permutations = combination.into_iter().permutations(amount);
         result.extend(permutations);
     }
-
     result
+}
 
+pub fn get_all_choices_from_range(range: usize) -> Vec<Vec<usize>> {
+    let mut result = vec![];
+    for i in 0..range + 1 {
+        let next_choices: Vec<Vec<usize>> = choices_from_range(range, i);
+        result.extend(next_choices);
+    }
+    result
 }
 
 #[cfg(test)]
@@ -48,8 +56,13 @@ mod tests {
         assert_eq!(set1, set2);
     }
 
+    /*
+    Scenario: range is smaller than the amount of selected entries.
+    An empty array should be returned.
+     */
     #[test]
     fn test_case_02() {
+
         // Given
         let range: usize = 1;
         let amount: usize = 2;
@@ -61,5 +74,22 @@ mod tests {
         // Then
         assert_eq!(result, expected_result);
 
+    }
+
+    /*
+    Scenario: Get all choices from range returns the correct amount of entries, including the maximum amount
+     */
+    #[test]
+    fn test_get_all_entries() {
+
+        // Given
+        let range = 2;
+        let expected_result: Vec<Vec<usize>> = vec![vec![], vec![0], vec![1], vec![0, 1], vec![1, 0]];
+
+        // When
+        let result = get_all_choices_from_range(range);
+
+        // Then
+        assert_eq!(result, expected_result);
     }
 }

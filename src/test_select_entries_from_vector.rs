@@ -7,7 +7,7 @@ pub fn test_entry_selection() {
     let entries: Vec<usize> = vec![3, 1];
 
     // When
-    let result = select_entries_from_vector(vec, entries);
+    let result = select_entries_from_vector(&vec, &entries);
 
     // Then
     if let Some((vec1, vec2)) = result {
@@ -26,7 +26,7 @@ pub fn test_entry_selection_02() {
     let entries: Vec<usize> = vec![1, 3];
 
     // When
-    let result = select_entries_from_vector(vec, entries);
+    let result = select_entries_from_vector(&vec, &entries);
 
     // Then
     if let Some((vec1, vec2)) = result {
@@ -45,7 +45,7 @@ pub fn test_entry_selection_03() {
     let entries: Vec<usize> = vec![0, 1, 2, 3];
 
     // When
-    let result = select_entries_from_vector(vec, entries);
+    let result = select_entries_from_vector(&vec, &entries);
 
     // Then
     if let Some((vec1, vec2)) = result {
@@ -64,7 +64,7 @@ pub fn test_entry_selection_04() {
     let entries: Vec<usize> = vec![0, 1, 2, 3, 0];
 
     // When
-    let result = select_entries_from_vector(vec, entries);
+    let result = select_entries_from_vector(&vec, &entries);
 
     // Then
     assert!(result == None);

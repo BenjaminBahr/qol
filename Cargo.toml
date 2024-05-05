@@ -2,6 +2,10 @@
 name = "qol"
 version = "0.1.0"
 edition = "2021"
+license = "CC-BY-NC-ND-3.0"
+description = "Small collection of quality-of-life functions"
+repository = "https://github.com/BenjaminBahr/qol/"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

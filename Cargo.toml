@@ -1,6 +1,6 @@
 [package]
 name = "bb-qol"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "CC-BY-NC-ND-3.0"
 description = "Small collection of quality-of-life functions"
@@ -10,4 +10,4 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-itertools = "0.12.1"
+itertools = "0.14.0"
